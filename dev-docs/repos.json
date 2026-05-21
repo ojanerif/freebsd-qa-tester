@@ -1,0 +1,32 @@
+[
+  {
+    "id": "qa-test",
+    "path": "./",
+    "type": "git-root",
+    "default_branch": "main",
+    "owner": "ojanerif",
+    "devdocs": "dev-docs",
+    "remote": "https://github.com/ojanerif/freebsd-qa-tester",
+    "modules": ["orchestrator","session-manager","command-engine","build-pipeline","reporting","qa-tests"]
+  },
+  {
+    "id": "amdese-freebsd-src",
+    "path": "dev/src",
+    "type": "git-subdir",
+    "default_branch": "varies-per-QA-ticket",
+    "owner": "AMDESE",
+    "devdocs": null,
+    "remote": "https://github.com/AMDESE/freebsd-src",
+    "note": "QA source tree; cloned/reset per ticket. Not committed to qa-test repo."
+  },
+  {
+    "id": "freebsd-ci-actions",
+    "path": "../freebsd-ci-actions",
+    "type": "sibling-repo",
+    "default_branch": "freebsd-ci-actions",
+    "owner": "ojanerif",
+    "devdocs": null,
+    "remote": "internal AMD git",
+    "note": "CI automation scripts including run.sh; provides SMTP config and email patterns."
+  }
+]

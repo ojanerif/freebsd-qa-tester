@@ -1,0 +1,22 @@
+{
+  "version": "4.0",
+  "name": "qa-test",
+  "description": "FreeBSD Kernel QA Testing Environment — POSIX sh harness for AMD AMDESE team kernel patch validation.",
+  "owner": "ojanerif",
+  "author": "Osvaldo J. Filho",
+  "created": "2026-04-28",
+  "last_updated": "2026-05-21",
+  "stack": ["POSIX sh", "FreeBSD 16.0-CURRENT", "make", "git", "kyua", "pmcstat", "pmc"],
+  "platform": "FreeBSD amd64",
+  "issue_tracker": "https://amd.atlassian.net/browse/SWLSVROS-*",
+  "source_repo": "https://github.com/AMDESE/freebsd-src",
+  "qa_repo": "https://github.com/ojanerif/freebsd-qa-tester",
+  "smtp": {
+    "sender": "freebsd-ci-actions@amd.com",
+    "default_recipients": "freebsd-test@mailman-svr.amd.com,ojanerif@amd.com",
+    "mta": "sendmail → dma → atlsmtp10.amd.com"
+  },
+  "modules": ["orchestrator","session-manager","command-engine","build-pipeline","reporting","qa-tests"],
+  "infra": ["amdese-freebsd-src","jira-amd"],
+  "devdocs_version": "v4.0 - Project Memory OS"
+}

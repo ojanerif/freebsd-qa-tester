@@ -1,6 +1,6 @@
 ---
 scope: global
-last_modified: 2026-05-18
+last_modified: 2026-05-21
 tags: [global, architecture, patterns]
 ---
 
@@ -156,3 +156,4 @@ tags: [qa-test, <type>]
 
 2026-04-28 | Bootstrap complete. 6 modules + 2 infra entries identified. Imported architecture, session-management, and workflow docs. 4 cross-cutting patterns captured. | all
 2026-05-18 | Added two global snippets that now appear in 3+ QA test scripts: two-phase script structure (Phase A build/install, Phase B runtime gated on kernel SHA) and BE side-load install sequence (7-step bectl/etcupdate pattern). Triggered by SWLSVROS-6414 and SWLSVROS-6519 joining SWLSVROS-6316. | all
+2026-05-21 | Migrated to dev-docs v4.0 Project Memory OS. Added: skills/, context-packs/, sessions/, team/, dashboard/, bin/devdocs.mjs, project.memory.json, CONSTITUTION.md, HUMAN-ONBOARDING.md, CHANGELOG.md, repos.json, agents.json. Rebuilt index.jsonl with 13 entries. | all

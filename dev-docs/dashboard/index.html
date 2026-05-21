@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dev-docs v4.0 — FreeBSD QA</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav id="sidebar">
+  <div class="logo">dev-docs <span class="v">v4.0</span></div>
+  <div class="project-name">qa-test</div>
+  <ul>
+    <li data-view="reader" class="active">📄 Reader</li>
+    <li data-view="skills">⚡ Skills</li>
+    <li data-view="sessions">🕒 Sessions</li>
+    <li data-view="context">📦 Context Packs</li>
+    <li data-view="git">🔀 Git / Drift</li>
+    <li data-view="health">❤️ Health</li>
+    <li data-view="activity">📋 Activity</li>
+  </ul>
+  <div class="user-badge" id="user-badge">—</div>
+</nav>
+
+<main id="main">
+  <!-- Reader -->
+  <section id="view-reader" class="view active">
+    <div class="toolbar">
+      <input id="search" type="text" placeholder="Search modules, skills, entries…">
+      <button onclick="loadIndex()">Refresh</button>
+    </div>
+    <div id="index-list" class="card-grid"></div>
+    <div id="file-viewer" class="file-viewer hidden">
+      <button onclick="closeFile()">← Back</button>
+      <pre id="file-content"></pre>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="view-skills" class="view hidden">
+    <div class="toolbar">
+      <input id="skill-search" type="text" placeholder="Search skills…" oninput="filterSkills()">
+      <select id="skill-cat" onchange="filterSkills()">
+        <option value="">All categories</option>
+        <option>development</option><option>testing</option><option>debugging</option>
+        <option>database</option><option>deployment</option><option>security</option>
+        <option>documentation</option>
+      </select>
+    </div>
+    <div id="skills-list" class="card-grid"></div>
+  </section>
+
+  <!-- Sessions -->
+  <section id="view-sessions" class="view hidden">
+    <div class="toolbar">
+      <button onclick="startSession()">+ New Session</button>
+    </div>
+    <div id="sessions-list" class="card-grid"></div>
+  </section>
+
+  <!-- Context Packs -->
+  <section id="view-context" class="view hidden">
+    <div class="context-form card">
+      <h2>Generate Context Pack</h2>
+      <label>Module <input id="cp-module" placeholder="e.g. orchestrator"></label>
+      <label>Task <input id="cp-task" placeholder="e.g. fix tr bug"></label>
+      <label>Skills (comma-separated) <input id="cp-skills" placeholder="e.g. run-qa-tester,verify-kernel"></label>
+      <button onclick="generateContextPack()">Generate</button>
+      <p id="cp-result"></p>
+    </div>
+  </section>
+
+  <!-- Git -->
+  <section id="view-git" class="view hidden">
+    <div class="card">
+      <h2>Git Status</h2>
+      <pre id="git-status-out">Loading…</pre>
+    </div>
+    <div class="card">
+      <h2>Dev-docs Drift</h2>
+      <p class="hint">Source files changed without a matching dev-docs update.</p>
+      <pre id="git-drift-out">Loading…</pre>
+    </div>
+  </section>
+
+  <!-- Health -->
+  <section id="view-health" class="view hidden">
+    <div class="card">
+      <h2>Validation</h2>
+      <button onclick="runValidate()">Run Validate</button>
+      <pre id="health-out">—</pre>
+    </div>
+  </section>
+
+  <!-- Activity -->
+  <section id="view-activity" class="view hidden">
+    <div class="card">
+      <h2>Activity Log</h2>
+      <div id="activity-list"></div>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

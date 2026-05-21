@@ -1,0 +1,6 @@
+
+# dev-docs v4.0 - local/private dirs
+dev-docs/.local/
+dev-docs/.backups/
+dev-docs/.token
+dev-docs/.generated/tmp/

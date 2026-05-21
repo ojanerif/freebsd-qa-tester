@@ -1,0 +1,26 @@
+[
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "model": "claude-sonnet-4-6",
+    "role": "primary-coding-agent",
+    "instructions_file": "CLAUDE.md",
+    "context_protocol": "Read dev-docs/AI-INSTRUCTIONS.md at session start. Use module index to load only relevant module file.",
+    "capabilities": ["read","write","bash","grep","glob","lsp"],
+    "trusted": true
+  },
+  {
+    "id": "gemini",
+    "name": "Gemini",
+    "instructions_file": "GEMINI.md",
+    "role": "secondary-agent",
+    "trusted": true
+  },
+  {
+    "id": "cline",
+    "name": "Cline",
+    "instructions_file": ".clinerules",
+    "role": "ide-agent",
+    "trusted": true
+  }
+]
