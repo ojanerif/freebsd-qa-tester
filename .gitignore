@@ -4,3 +4,8 @@ dev-docs/.local/
 dev-docs/.backups/
 dev-docs/.token
 dev-docs/.generated/tmp/
+# Credentials — never commit
+.env
+*.secret
+credentials.*
+
